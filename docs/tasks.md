@@ -176,6 +176,13 @@ Depende de: 11.5
 - [x] Capturas y GIF automáticos desde la demo con Playwright (`task screenshots`), en inglés y en español, en `docs/screenshots/`: carrusel, detalle de un juego de Switch, confirmación de subida, No asignados y una vista móvil; el GIF recorre subir → confirmar → juego guardado. Hallazgo corregido: el banner de la demo empujaba cada pantalla 38 px y cortaba la barra inferior; ahora las pantallas restan su altura (`min-h-app`)
 - [x] README EN/ES reescritos para portfolio: GIF y enlace a la demo, características, capturas, diagramas Mermaid (despliegue y estados de una subida), stack, instalación en TrueNAS, desarrollo y licencia
 
+## Fase 13 — Icono y diagramas interactivos
+Depende de: 12 · Versión: `v1.1.0` (2026-10-23)
+- [x] Icono de la app con las iniciales «GE» y la paleta de `tokens.css` (fondo `#38383b`/`#2a2a2d`, acento `#f2b544`), hecho con Codex: `favicon.svg`, `favicon.ico`, `apple-touch-icon.png` (180), `icon-192.png` e `icon-512.png` en `apps/web/public/`, enlazados en `index.html` (también en la demo). Los PNG y el ICO salen de los dos SVG con `task icons`
+- [x] Diagramas interactivos con [archify](https://github.com/tt-a1i/archify), en inglés y español, como en VideoExplorer: arquitectura del sistema y ciclo de vida de una subida. Fuentes JSON en `docs/architecture/`, HTML en `docs/architecture/site/` con una página índice y el icono. Para que entraran en un escritorio, el ciclo de vida agrupa en una tarjeta lo que no se dibuja (papelera, cancelado, guardando)
+- [x] Workflow `.github/workflows/pages.yml` que publica `docs/architecture/site/` en GitHub Pages
+- [x] README EN/ES: los Mermaid se reemplazan por los SVG exportados de archify (`docs/architecture/images/{en,es}/`), enlazados a su versión interactiva en Pages y exportados con `task architecture-svg`; guía de regeneración en `docs/architecture/README.md`
+
 ## Hallazgos de pruebas reales
 Prueba del 2026-10-08 con 17 archivos reales (~37 GB): 7 `.rar` de Switch (base, updates y DLC de juegos que ya estaban en la biblioteca), 1 `.iso` de PS2, 4 `.iso` de PSP y 5 `.7z`/`.zip` de Wii. Todo subió (~50 MB/s por archivo, 2 a la vez), se descomprimió sin errores y la API se mantuvo en ~100 MB de RAM. La detección acertó en Switch, PS2 y Wii, y los duplicados de Switch (base, update y 3 DLC) se marcaron todos. Se guardaron 9 juegos (PS2, Wii y PSP como consola agregada). La descarga por rango (206) y la descarga completa salieron idénticas al original (MD5) y el zip del juego se generó bien. Después se borró todo.
 

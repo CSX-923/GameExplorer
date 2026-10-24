@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#38383b" />
+    <title>GameExplorer · Architecture</title>
+    <link rel="icon" href="favicon.svg" />
+    <style>
+      :root { color-scheme: dark; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #38383b; color: #fff; --surface: #2a2a2d; --border: #4a4a4f; --accent: #f2b544; --muted: #c6c6ca; }
+      * { box-sizing: border-box; }
+      body { margin: 0; min-width: 320px; background: #38383b; color: #fff; }
+      a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: .2em; }
+      a:hover { text-decoration-thickness: 2px; }
+      a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 3px; }
+      .wrap { width: min(100% - 40px, 1040px); margin-inline: auto; }
+      header { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding-block: 26px; border-bottom: 1px solid var(--border); }
+      .brand { display: inline-flex; align-items: center; gap: 12px; color: #fff; text-decoration: none; font-weight: 750; letter-spacing: -.025em; }
+      .brand img { width: 34px; height: 34px; }
+      nav, footer { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; }
+      main { padding-block: clamp(48px, 9vw, 92px) 72px; }
+      .eyebrow { margin: 0 0 14px; color: var(--accent); font-size: .82rem; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
+      h1 { max-width: 780px; margin: 0; font-size: clamp(2.6rem, 7vw, 5rem); line-height: 1.02; letter-spacing: -.06em; }
+      .intro { max-width: 700px; margin: 22px 0 0; color: var(--muted); font-size: clamp(1.05rem, 2.5vw, 1.25rem); line-height: 1.65; }
+      .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 48px; }
+      .card { min-height: 210px; padding: 26px; border: 1px solid var(--border); border-radius: 16px; background: var(--surface); transition: border-color 160ms ease, transform 160ms ease; }
+      .card:hover { transform: translateY(-2px); border-color: var(--accent); }
+      .card a { display: block; color: #fff; text-decoration: none; }
+      .card a:focus-visible { outline-offset: 7px; }
+      .card h2 { margin: 0; font-size: 1.3rem; letter-spacing: -.02em; }
+      .card p { margin: 12px 0 18px; color: var(--muted); line-height: 1.6; }
+      .card .open { color: var(--accent); font-weight: 700; }
+      footer { justify-content: space-between; padding-block: 22px 30px; border-top: 1px solid var(--border); color: var(--muted); font-size: .95rem; }
+      @media (max-width: 650px) { .wrap { width: min(100% - 32px, 1040px); } header { align-items: flex-start; } nav { justify-content: flex-end; gap: 14px; } .cards { grid-template-columns: 1fr; margin-top: 36px; } .card { min-height: auto; } footer { align-items: flex-start; } }
+      @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; } }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <a class="brand" href="index.html" aria-label="GameExplorer architecture home">
+          <img src="favicon.svg" alt="" width="34" height="34" />
+          <span>GameExplorer</span>
+        </a>
+        <nav aria-label="Language and project links">
+          <a href="es/index.html" lang="es">Español</a>
+          <a href="https://github.com/CarlosSV923/GameExplorer">Repository</a>
+          <a href="https://game-explorer-gold.vercel.app/">Live demo</a>
+        </nav>
+      </header>
+      <main>
+        <p class="eyebrow">System map</p>
+        <h1>GameExplorer architecture</h1>
+        <p class="intro">Explore the TrueNAS SCALE app, its shared game library and metadata integrations, and the browser based Vercel demo. The companion lifecycle follows upload jobs from transfer through validation and storage.</p>
+        <section class="cards" aria-label="Interactive diagrams">
+          <article class="card">
+            <a href="architecture.html">
+              <h2>System architecture</h2>
+              <p>Go and embedded React, SQLite and image cache, SMB scanning, IGDB, GHCR deployment and the Vercel demo.</p>
+              <span class="open">Explore the architecture <span aria-hidden="true">→</span></span>
+            </a>
+          </article>
+          <article class="card">
+            <a href="upload-lifecycle.html">
+              <h2>Upload job lifecycle</h2>
+              <p>Resumable uploads, multi-volume archives, passwords, validation, confirmation and final outcomes.</p>
+              <span class="open">Explore the lifecycle <span aria-hidden="true">→</span></span>
+            </a>
+          </article>
+        </section>
+      </main>
+      <footer>
+        <span>Game library management for TrueNAS SCALE</span>
+        <nav aria-label="Project links">
+          <a href="https://github.com/CarlosSV923/GameExplorer">GitHub</a>
+          <a href="https://game-explorer-gold.vercel.app/">Demo</a>
+        </nav>
+      </footer>
+    </div>
+  </body>
+</html>

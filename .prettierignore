@@ -6,3 +6,5 @@ apps/api
 *.md
 apps/web/src/shared/api/schema.d.ts
 apps/web/src/modules/metadata/infrastructure/demo/catalog.json
+# archify candidates and their generated pages (see docs/architecture/README.md)
+docs/architecture/

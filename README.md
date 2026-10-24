@@ -1,6 +1,6 @@
 # GameExplorer
 
-[Español](README.es.md) · **[Live demo](https://game-explorer-gold.vercel.app/)**
+[Español](README.es.md) · **[Live demo](https://game-explorer-gold.vercel.app/)** · **[Interactive architecture](https://carlossv923.github.io/GameExplorer/)**
 
 Self-hosted web app for a home NAS (TrueNAS SCALE) to **upload, extract, classify, rename, browse and download emulation game files** from any browser: desktop, tablet, touch screen or gamepad. The UI is inspired by EmulationStation.
 
@@ -36,49 +36,13 @@ Screenshots and GIF are generated from the demo with `task screenshots`.
 
 ## Architecture
 
-```mermaid
-flowchart LR
-  subgraph NAS["TrueNAS SCALE"]
-    direction TB
-    app["GameExplorer<br/>Go binary + embedded React app"]
-    db[("SQLite<br/>/data")]
-    lib[("Game library<br/>/library (SMB dataset)")]
-    zip["7-Zip<br/>(child process)"]
-    app --- db
-    app --- lib
-    app --- zip
-  end
-  browser["Browser<br/>desktop · tablet · gamepad"] -- "HTTP · tus uploads · SSE" --> app
-  app -- "names, covers, logos" --> igdb["IGDB"]
-  pc["PC over SMB"] -- "copies files" --> lib
-  subgraph Vercel
-    demo["Demo<br/>same React app, in-memory adapters"]
-  end
-  visitor["Visitor"] --> demo
-```
+**Interactive diagrams:** [carlossv923.github.io/GameExplorer](https://carlossv923.github.io/GameExplorer/): explorable versions of the two diagrams below (system architecture and upload job lifecycle), generated with [Archify](https://github.com/tt-a1i/archify) from [`docs/architecture/`](docs/architecture/).
+
+<p align="center"><a href="https://carlossv923.github.io/GameExplorer/architecture.html"><img src="docs/architecture/images/en/architecture.svg" alt="GameExplorer architecture: on TrueNAS SCALE, the Go binary with the embedded React app uses SQLite and an IGDB image cache in /data, organizes the game library dataset (/library: console folders, _unassigned, .gameexplorer) and runs 7-Zip as a child process; the browser talks HTTP, tus uploads and SSE; IGDB provides names, covers and logos; SMB copies are picked up by the periodic scan; the image is published to GHCR; the Vercel demo runs the same React app with in-memory adapters" width="100%"></a></p>
 
 An upload is a job that follows this state machine (spec RF-03 to RF-13):
 
-```mermaid
-stateDiagram-v2
-  [*] --> uploading
-  uploading --> uploaded
-  uploaded --> extracting: archive
-  extracting --> needs_password
-  needs_password --> extracting
-  uploaded --> confirm: files fit the console
-  extracting --> confirm
-  uploaded --> invalid: files do not fit
-  extracting --> invalid
-  invalid --> confirm: change console
-  confirm --> committing
-  committing --> done
-  uploaded --> unassigned: no console
-  extracting --> unassigned
-  invalid --> unassigned
-  invalid --> trashed
-  done --> [*]
-```
+<p align="center"><a href="https://carlossv923.github.io/GameExplorer/upload-lifecycle.html"><img src="docs/architecture/images/en/upload-lifecycle.svg" alt="Upload job lifecycle: uploading, uploaded, waiting for parts, extracting, needs password, confirm, invalid, and the outcomes done, unassigned and failed" width="100%"></a></p>
 
 | | |
 |---|---|

@@ -1,0 +1,351 @@
+{
+  "schema_version": 3,
+  "diagram_type": "lifecycle",
+  "meta": {
+    "title": "Ciclo de vida de una subida",
+    "locale": "es",
+    "output": "docs/architecture/site/es/upload-lifecycle.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/CarlosSV923/GameExplorer.git",
+      "provider": "github",
+      "link_mode": "web",
+      "revision": "5a1b0af0a88e6ffd33c6fc43b86646ddb47a555d"
+    }
+  },
+  "mainPath": [
+    "uploading",
+    "uploaded",
+    "extracting",
+    "confirm",
+    "done"
+  ],
+  "states": [
+    {
+      "id": "uploading",
+      "type": "start",
+      "label": "Subiendo",
+      "sublabel": "transferencia tus",
+      "sources": [
+        {
+          "path": "apps/api/internal/ingestion/domain/job.go",
+          "line": 21,
+          "end_line": 24
+        },
+        {
+          "path": "apps/api/internal/ingestion/domain/job.go",
+          "line": 138,
+          "end_line": 157
+        }
+      ]
+    },
+    {
+      "id": "uploaded",
+      "type": "active",
+      "label": "Subida completa",
+      "sublabel": "todo recibido",
+      "sources": [
+        {
+          "path": "apps/api/internal/ingestion/domain/job.go",
+          "line": 181,
+          "end_line": 189
+        }
+      ]
+    },
+    {
+      "id": "waiting-parts",
+      "type": "waiting",
+      "label": "Esperando partes",
+      "sublabel": "faltan partes",
+      "sources": [
+        {
+          "path": "apps/api/internal/ingestion/domain/job.go",
+          "line": 25,
+          "end_line": 27
+        },
+        {
+          "path": "apps/api/internal/ingestion/domain/job.go",
+          "line": 241,
+          "end_line": 253
+        }
+      ]
+    },
+    {
+      "id": "extracting",
+      "type": "active",
+      "label": "Descomprimiendo",
+      "sublabel": "7-Zip, verificado",
+      "sources": [
+        {
+          "path": "apps/api/internal/ingestion/domain/job.go",
+          "line": 191,
+          "end_line": 197
+        },
+        {
+          "path": "apps/api/internal/ingestion/infrastructure/sevenzip/sevenzip.go",
+          "line": 114,
+          "end_line": 156
+        }
+      ]
+    },
+    {
+      "id": "needs-password",
+      "type": "waiting",
+      "label": "Necesita contraseña",
+      "sublabel": "comprimido cifrado",
+      "sources": [
+        {
+          "path": "apps/api/internal/ingestion/domain/job.go",
+          "line": 217,
+          "end_line": 224
+        }
+      ]
+    },
+    {
+      "id": "confirm",
+      "type": "decision",
+      "label": "Confirmar",
+      "sublabel": "encajan",
+      "sources": [
+        {
+          "path": "apps/api/internal/ingestion/domain/job.go",
+          "line": 31,
+          "end_line": 35
+        },
+        {
+          "path": "apps/api/internal/ingestion/domain/job.go",
+          "line": 226,
+          "end_line": 239
+        }
+      ]
+    },
+    {
+      "id": "invalid",
+      "type": "decision",
+      "label": "No válido",
+      "sublabel": "no encajan",
+      "sources": [
+        {
+          "path": "apps/api/internal/ingestion/domain/job.go",
+          "line": 33,
+          "end_line": 35
+        },
+        {
+          "path": "apps/api/internal/ingestion/domain/job.go",
+          "line": 226,
+          "end_line": 239
+        }
+      ]
+    },
+    {
+      "id": "done",
+      "type": "success",
+      "label": "Listo",
+      "sublabel": "en la biblioteca",
+      "sources": [
+        {
+          "path": "apps/api/internal/ingestion/domain/job.go",
+          "line": 273,
+          "end_line": 276
+        }
+      ]
+    },
+    {
+      "id": "unassigned",
+      "type": "success",
+      "label": "No asignados",
+      "sublabel": "sin consola",
+      "sources": [
+        {
+          "path": "apps/api/internal/ingestion/domain/job.go",
+          "line": 37,
+          "end_line": 40
+        },
+        {
+          "path": "apps/api/internal/ingestion/domain/job.go",
+          "line": 95,
+          "end_line": 105
+        },
+        {
+          "path": "apps/api/internal/ingestion/domain/job.go",
+          "line": 166,
+          "end_line": 170
+        }
+      ]
+    },
+    {
+      "id": "failed",
+      "type": "failure",
+      "label": "Fallido",
+      "sublabel": "error",
+      "sources": [
+        {
+          "path": "apps/api/internal/ingestion/domain/job.go",
+          "line": 41,
+          "end_line": 55
+        },
+        {
+          "path": "apps/api/internal/ingestion/domain/job.go",
+          "line": 302,
+          "end_line": 309
+        }
+      ]
+    }
+  ],
+  "transitions": [
+    {
+      "id": "upload-finish",
+      "from": "uploading",
+      "to": "uploaded",
+      "label": "completa"
+    },
+    {
+      "id": "upload-fail",
+      "from": "uploading",
+      "to": "failed"
+    },
+    {
+      "id": "upload-extract",
+      "from": "uploaded",
+      "to": "extracting",
+      "label": "comprimido"
+    },
+    {
+      "id": "upload-confirm",
+      "from": "uploaded",
+      "to": "confirm",
+      "label": "encaja"
+    },
+    {
+      "id": "upload-invalid",
+      "from": "uploaded",
+      "to": "invalid",
+      "label": "no encaja"
+    },
+    {
+      "id": "upload-unassigned",
+      "from": "uploaded",
+      "to": "unassigned",
+      "label": "sin consola"
+    },
+    {
+      "id": "upload-wait-parts",
+      "from": "uploaded",
+      "to": "waiting-parts",
+      "label": "partes"
+    },
+    {
+      "id": "upload-failed",
+      "from": "uploaded",
+      "to": "failed"
+    },
+    {
+      "id": "parts-complete",
+      "from": "waiting-parts",
+      "to": "uploaded",
+      "label": "completa"
+    },
+    {
+      "id": "parts-failed",
+      "from": "waiting-parts",
+      "to": "failed"
+    },
+    {
+      "id": "extract-confirm",
+      "from": "extracting",
+      "to": "confirm",
+      "label": "encaja"
+    },
+    {
+      "id": "extract-invalid",
+      "from": "extracting",
+      "to": "invalid",
+      "label": "no encaja"
+    },
+    {
+      "id": "extract-unassigned",
+      "from": "extracting",
+      "to": "unassigned",
+      "label": "sin consola"
+    },
+    {
+      "id": "password-needed",
+      "from": "extracting",
+      "to": "needs-password",
+      "label": "clave"
+    },
+    {
+      "id": "extract-failed",
+      "from": "extracting",
+      "to": "failed"
+    },
+    {
+      "id": "password-retry",
+      "from": "needs-password",
+      "to": "extracting",
+      "label": "enviada"
+    },
+    {
+      "id": "invalid-confirm",
+      "from": "invalid",
+      "to": "confirm",
+      "label": "otra consola"
+    },
+    {
+      "id": "invalid-unassigned",
+      "from": "invalid",
+      "to": "unassigned",
+      "label": "apartar"
+    },
+    {
+      "id": "confirm-done",
+      "from": "confirm",
+      "to": "done",
+      "label": "guardar"
+    },
+    {
+      "id": "confirm-failed",
+      "from": "confirm",
+      "to": "failed"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Ruta normal",
+      "items": [
+        "Los archivos comprimidos se descomprimen antes de comprobarlos con la consola elegida.",
+        "Una subida válida espera en Confirmar hasta que la persona la guarde en la biblioteca; Listo indica que los archivos ya se guardaron.",
+        "Un archivo suelto puede pasar de Subida completa directamente a la validación."
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Desvíos y recuperación",
+      "items": [
+        "Los archivos divididos esperan a que llegue el grupo completo; las demás partes se unen al trabajo del primer volumen.",
+        "Un archivo protegido espera en Necesita contraseña y vuelve a Descomprimiendo cuando se envía la contraseña.",
+        "Cambiar la consola desde No válido repite la validación y puede llevar a Confirmar. Si falla el guardado, también puede volver a Confirmar."
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Otros resultados",
+      "items": [
+        "Una subida sin consola va a No asignados, no a la carpeta de una consola.",
+        "Una subida No válida se puede apartar en No asignados o enviar a la papelera.",
+        "Fallido indica un error de procesamiento y no tiene salida. Listo y No asignados son los otros resultados terminales."
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Sin dibujar",
+      "items": [
+        "Apartar también ofrece la papelera, restaurable en No asignados.",
+        "Cambiar la consola desde Confirmar puede volver a dejarlos como no válidos.",
+        "Un guardado que falla se deshace y vuelve a Confirmar; cualquier paso puede fallar o cancelarse.",
+        "Guardar (committing) mueve todos los archivos en una sola operación registrada, que se deshace si falla."
+      ]
+    }
+  ]
+}

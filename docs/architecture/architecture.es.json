@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Arquitectura de GameExplorer",
+    "locale": "es",
+    "output": "docs/architecture/site/es/architecture.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/CarlosSV923/GameExplorer.git",
+      "provider": "github",
+      "link_mode": "web",
+      "revision": "5a1b0af0a88e6ffd33c6fc43b86646ddb47a555d"
+    }
+  },
+  "components": [
+    {
+      "id": "browser",
+      "type": "external",
+      "label": "Navegador",
+      "sublabel": "Escritorio · tableta · táctil · gamepad",
+      "pos": [40, 215],
+      "size": [220, 76],
+      "sources": [{ "path": "README.es.md", "line": 51, "end_line": 51 }]
+    },
+    {
+      "id": "server",
+      "type": "backend",
+      "label": "GameExplorer",
+      "sublabel": "Binario Go · app React integrada · API HTTP",
+      "pos": [355, 205],
+      "size": [265, 86],
+      "sources": [
+        { "path": "apps/api/cmd/gameexplorer/main.go", "line": 1, "end_line": 4 },
+        { "path": "apps/api/internal/platform/web/spa.go", "line": 1, "end_line": 25 },
+        { "path": "apps/api/cmd/gameexplorer/app.go", "line": 244, "end_line": 260 }
+      ]
+    },
+    {
+      "id": "sqlite",
+      "type": "database",
+      "label": "SQLite",
+      "sublabel": "/data/gameexplorer.db · catálogo · trabajos · diario de operaciones",
+      "pos": [360, 55],
+      "size": [290, 78],
+      "sources": [
+        { "path": "apps/api/internal/platform/database/sqlite.go", "line": 18, "end_line": 42 },
+        { "path": "apps/api/db/migrations/00001_schema.sql", "line": 22, "end_line": 36 },
+        { "path": "apps/api/db/migrations/00001_schema.sql", "line": 90, "end_line": 126 }
+      ]
+    },
+    {
+      "id": "image-cache",
+      "type": "database",
+      "label": "Caché de imágenes de IGDB",
+      "sublabel": "/data/cache/images · carátulas y logos de consolas",
+      "pos": [710, 55],
+      "size": [290, 78],
+      "sources": [
+        { "path": "apps/api/cmd/gameexplorer/app.go", "line": 200, "end_line": 202 },
+        { "path": "apps/api/internal/metadata/infrastructure/imagecache/cache.go", "line": 1, "end_line": 3 },
+        { "path": "apps/api/internal/metadata/infrastructure/imagecache/cache.go", "line": 52, "end_line": 64 }
+      ]
+    },
+    {
+      "id": "library",
+      "type": "database",
+      "label": "Dataset de juegos",
+      "sublabel": "/library · n64 · gc · wii · switch · ps2 · psp · _unassigned/ · .gameexplorer/",
+      "pos": [710, 205],
+      "size": [320, 90],
+      "sources": [
+        { "path": "apps/api/cmd/gameexplorer/app.go", "line": 128, "end_line": 162 },
+        { "path": "apps/api/internal/catalog/domain/consoles/consoles.go", "line": 10, "end_line": 18 },
+        { "path": "deploy/truenas/compose.yaml", "line": 22, "end_line": 30 }
+      ]
+    },
+    {
+      "id": "sevenzip",
+      "type": "backend",
+      "label": "7-Zip (7zz)",
+      "sublabel": "Descompresión de archivos en un proceso hijo",
+      "pos": [360, 390],
+      "size": [275, 76],
+      "sources": [
+        { "path": "apps/api/internal/ingestion/infrastructure/sevenzip/sevenzip.go", "line": 1, "end_line": 4 },
+        { "path": "apps/api/internal/ingestion/infrastructure/sevenzip/sevenzip.go", "line": 24, "end_line": 49 },
+        { "path": "apps/api/internal/ingestion/infrastructure/sevenzip/sevenzip.go", "line": 114, "end_line": 127 }
+      ]
+    },
+    {
+      "id": "igdb",
+      "type": "external",
+      "label": "IGDB · Twitch OAuth",
+      "sublabel": "Nombres de juegos, carátulas y logos de consolas",
+      "pos": [1140, 55],
+      "size": [270, 78],
+      "sources": [
+        { "path": "apps/api/internal/metadata/infrastructure/igdb/client.go", "line": 27, "end_line": 30 },
+        { "path": "apps/api/internal/metadata/infrastructure/igdb/client.go", "line": 84, "end_line": 112 },
+        { "path": "apps/api/internal/metadata/infrastructure/igdb/client.go", "line": 142, "end_line": 181 }
+      ]
+    },
+    {
+      "id": "pc",
+      "type": "external",
+      "label": "PC por SMB",
+      "sublabel": "Copia archivos en el dataset compartido",
+      "pos": [1120, 220],
+      "size": [230, 76],
+      "sources": [
+        { "path": "deploy/truenas/compose.yaml", "line": 28, "end_line": 30 },
+        { "path": "apps/api/internal/catalog/application/scan.go", "line": 45, "end_line": 50 },
+        { "path": "apps/api/internal/catalog/application/scan.go", "line": 221, "end_line": 239 }
+      ]
+    },
+    {
+      "id": "ghcr",
+      "type": "external",
+      "label": "Imagen de GHCR",
+      "sublabel": "ghcr.io/carlossv923/gameexplorer",
+      "pos": [710, 420],
+      "size": [260, 76],
+      "sources": [
+        { "path": ".github/workflows/release.yml", "line": 1, "end_line": 7 },
+        { "path": ".github/workflows/release.yml", "line": 24, "end_line": 38 }
+      ]
+    },
+    {
+      "id": "demo",
+      "type": "frontend",
+      "label": "Demo de Vercel",
+      "sublabel": "La misma app React · adaptadores en memoria · sin backend",
+      "pos": [40, 425],
+      "size": [300, 82],
+      "sources": [
+        { "path": "README.es.md", "line": 3, "end_line": 11 },
+        { "path": "apps/web/src/app/services.ts", "line": 44, "end_line": 57 },
+        { "path": "apps/web/src/app/config.ts", "line": 1, "end_line": 8 }
+      ]
+    }
+  ],
+  "boundaries": [
+    { "kind": "region", "label": "TrueNAS SCALE · Custom App", "wraps": ["server", "sqlite", "image-cache", "library", "sevenzip"] },
+    { "kind": "region", "label": "Vercel", "wraps": ["demo"] }
+  ],
+  "connections": [
+    { "id": "browser-requests", "from": "browser", "to": "server", "label": "HTTP · subidas reanudables con tus", "labelAt": [269, 305], "variant": "emphasis" },
+    { "id": "server-events", "from": "server", "to": "browser", "label": "eventos SSE de trabajos · respuestas HTTP", "labelAt": [331, 305], "variant": "dashed" },
+    { "id": "server-sqlite", "from": "server", "to": "sqlite", "label": "catálogo · trabajos · diario", "fromSide": "top", "toSide": "bottom" },
+    { "id": "server-image-cache", "from": "server", "to": "image-cache", "label": "leer y guardar imágenes", "fromSide": "top", "toSide": "bottom" },
+    { "id": "server-library", "from": "server", "to": "library", "label": "preparar · escanear · organizar", "variant": "emphasis" },
+    { "id": "server-extractor", "from": "server", "to": "sevenzip", "label": "descomprimir archivos", "fromSide": "bottom", "toSide": "top" },
+    { "id": "server-igdb", "from": "server", "to": "igdb", "label": "Twitch OAuth · metadatos", "fromSide": "top", "toSide": "bottom" },
+    { "id": "cache-igdb", "from": "image-cache", "to": "igdb", "label": "descargar imágenes del CDN" },
+    { "id": "pc-library", "from": "pc", "to": "library", "label": "copiar archivos por SMB", "variant": "dashed", "fromSide": "left", "toSide": "right" },
+    { "id": "library-scan", "from": "server", "to": "library", "label": "escaneo periódico · archivos desconocidos → _unassigned/", "variant": "dashed" },
+    { "id": "release-image", "from": "ghcr", "to": "server", "label": "imagen de versión · despliegue en TrueNAS", "variant": "dashed" },
+    { "id": "browser-demo", "from": "browser", "to": "demo", "label": "abrir la demo en línea" }
+  ],
+  "cards": [
+    {
+      "dot": "amber",
+      "title": "Datos persistentes",
+      "items": [
+        "SQLite en /data guarda el catálogo, los trabajos de subida, el estado del escaneo y el diario de operaciones de la biblioteca.",
+        "Las imágenes de IGDB se guardan en caché en /data/cache/images.",
+        "Las sesiones son tokens sin estado firmados con HMAC en cookies; no son filas de SQLite."
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "Biblioteca compartida",
+      "items": [
+        "El dataset /library se comparte por SMB; las carpetas de consola son n64, gc, wii, switch, ps2 y psp.",
+        "El escaneo periódico detecta archivos estables copiados en carpetas de consola y mueve los desconocidos a _unassigned/.",
+        ".gameexplorer/ contiene las zonas de preparación de subidas y extracción, el espacio temporal de operaciones y la papelera."
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Demo y despliegue",
+      "items": [
+        "La demo de Vercel usa la misma app React con adaptadores en memoria del navegador y sin servicio backend.",
+        "El flujo de versiones publica una imagen en GHCR; deploy/truenas/compose.yaml configura la Custom App de TrueNAS."
+      ]
+    }
+  ]
+}

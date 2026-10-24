@@ -1,0 +1,351 @@
+{
+  "schema_version": 3,
+  "diagram_type": "lifecycle",
+  "meta": {
+    "title": "Upload Job Lifecycle",
+    "locale": "en",
+    "output": "docs/architecture/site/upload-lifecycle.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/CarlosSV923/GameExplorer.git",
+      "provider": "github",
+      "link_mode": "web",
+      "revision": "5a1b0af0a88e6ffd33c6fc43b86646ddb47a555d"
+    }
+  },
+  "mainPath": [
+    "uploading",
+    "uploaded",
+    "extracting",
+    "confirm",
+    "done"
+  ],
+  "states": [
+    {
+      "id": "uploading",
+      "type": "start",
+      "label": "Uploading",
+      "sublabel": "tus transfer",
+      "sources": [
+        {
+          "path": "apps/api/internal/ingestion/domain/job.go",
+          "line": 21,
+          "end_line": 24
+        },
+        {
+          "path": "apps/api/internal/ingestion/domain/job.go",
+          "line": 138,
+          "end_line": 157
+        }
+      ]
+    },
+    {
+      "id": "uploaded",
+      "type": "active",
+      "label": "Uploaded",
+      "sublabel": "all bytes in",
+      "sources": [
+        {
+          "path": "apps/api/internal/ingestion/domain/job.go",
+          "line": 181,
+          "end_line": 189
+        }
+      ]
+    },
+    {
+      "id": "waiting-parts",
+      "type": "waiting",
+      "label": "Waiting for parts",
+      "sublabel": "other parts",
+      "sources": [
+        {
+          "path": "apps/api/internal/ingestion/domain/job.go",
+          "line": 25,
+          "end_line": 27
+        },
+        {
+          "path": "apps/api/internal/ingestion/domain/job.go",
+          "line": 241,
+          "end_line": 253
+        }
+      ]
+    },
+    {
+      "id": "extracting",
+      "type": "active",
+      "label": "Extracting",
+      "sublabel": "7-Zip, verified",
+      "sources": [
+        {
+          "path": "apps/api/internal/ingestion/domain/job.go",
+          "line": 191,
+          "end_line": 197
+        },
+        {
+          "path": "apps/api/internal/ingestion/infrastructure/sevenzip/sevenzip.go",
+          "line": 114,
+          "end_line": 156
+        }
+      ]
+    },
+    {
+      "id": "needs-password",
+      "type": "waiting",
+      "label": "Needs password",
+      "sublabel": "archive locked",
+      "sources": [
+        {
+          "path": "apps/api/internal/ingestion/domain/job.go",
+          "line": 217,
+          "end_line": 224
+        }
+      ]
+    },
+    {
+      "id": "confirm",
+      "type": "decision",
+      "label": "Confirm",
+      "sublabel": "files fit",
+      "sources": [
+        {
+          "path": "apps/api/internal/ingestion/domain/job.go",
+          "line": 31,
+          "end_line": 35
+        },
+        {
+          "path": "apps/api/internal/ingestion/domain/job.go",
+          "line": 226,
+          "end_line": 239
+        }
+      ]
+    },
+    {
+      "id": "invalid",
+      "type": "decision",
+      "label": "Invalid",
+      "sublabel": "files don't fit",
+      "sources": [
+        {
+          "path": "apps/api/internal/ingestion/domain/job.go",
+          "line": 33,
+          "end_line": 35
+        },
+        {
+          "path": "apps/api/internal/ingestion/domain/job.go",
+          "line": 226,
+          "end_line": 239
+        }
+      ]
+    },
+    {
+      "id": "done",
+      "type": "success",
+      "label": "Done",
+      "sublabel": "in the library",
+      "sources": [
+        {
+          "path": "apps/api/internal/ingestion/domain/job.go",
+          "line": 273,
+          "end_line": 276
+        }
+      ]
+    },
+    {
+      "id": "unassigned",
+      "type": "success",
+      "label": "Unassigned",
+      "sublabel": "no console",
+      "sources": [
+        {
+          "path": "apps/api/internal/ingestion/domain/job.go",
+          "line": 37,
+          "end_line": 40
+        },
+        {
+          "path": "apps/api/internal/ingestion/domain/job.go",
+          "line": 95,
+          "end_line": 105
+        },
+        {
+          "path": "apps/api/internal/ingestion/domain/job.go",
+          "line": 166,
+          "end_line": 170
+        }
+      ]
+    },
+    {
+      "id": "failed",
+      "type": "failure",
+      "label": "Failed",
+      "sublabel": "error",
+      "sources": [
+        {
+          "path": "apps/api/internal/ingestion/domain/job.go",
+          "line": 41,
+          "end_line": 55
+        },
+        {
+          "path": "apps/api/internal/ingestion/domain/job.go",
+          "line": 302,
+          "end_line": 309
+        }
+      ]
+    }
+  ],
+  "transitions": [
+    {
+      "id": "upload-finish",
+      "from": "uploading",
+      "to": "uploaded",
+      "label": "complete"
+    },
+    {
+      "id": "upload-fail",
+      "from": "uploading",
+      "to": "failed"
+    },
+    {
+      "id": "upload-extract",
+      "from": "uploaded",
+      "to": "extracting",
+      "label": "archive"
+    },
+    {
+      "id": "upload-confirm",
+      "from": "uploaded",
+      "to": "confirm",
+      "label": "fits"
+    },
+    {
+      "id": "upload-invalid",
+      "from": "uploaded",
+      "to": "invalid",
+      "label": "doesn't fit"
+    },
+    {
+      "id": "upload-unassigned",
+      "from": "uploaded",
+      "to": "unassigned",
+      "label": "no console"
+    },
+    {
+      "id": "upload-wait-parts",
+      "from": "uploaded",
+      "to": "waiting-parts",
+      "label": "parts"
+    },
+    {
+      "id": "upload-failed",
+      "from": "uploaded",
+      "to": "failed"
+    },
+    {
+      "id": "parts-complete",
+      "from": "waiting-parts",
+      "to": "uploaded",
+      "label": "complete"
+    },
+    {
+      "id": "parts-failed",
+      "from": "waiting-parts",
+      "to": "failed"
+    },
+    {
+      "id": "extract-confirm",
+      "from": "extracting",
+      "to": "confirm",
+      "label": "fits"
+    },
+    {
+      "id": "extract-invalid",
+      "from": "extracting",
+      "to": "invalid",
+      "label": "doesn't fit"
+    },
+    {
+      "id": "extract-unassigned",
+      "from": "extracting",
+      "to": "unassigned",
+      "label": "no console"
+    },
+    {
+      "id": "password-needed",
+      "from": "extracting",
+      "to": "needs-password",
+      "label": "password"
+    },
+    {
+      "id": "extract-failed",
+      "from": "extracting",
+      "to": "failed"
+    },
+    {
+      "id": "password-retry",
+      "from": "needs-password",
+      "to": "extracting",
+      "label": "submitted"
+    },
+    {
+      "id": "invalid-confirm",
+      "from": "invalid",
+      "to": "confirm",
+      "label": "change console"
+    },
+    {
+      "id": "invalid-unassigned",
+      "from": "invalid",
+      "to": "unassigned",
+      "label": "set aside"
+    },
+    {
+      "id": "confirm-done",
+      "from": "confirm",
+      "to": "done",
+      "label": "store"
+    },
+    {
+      "id": "confirm-failed",
+      "from": "confirm",
+      "to": "failed"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Normal path",
+      "items": [
+        "Archives are extracted before their files are checked against the selected console.",
+        "A compatible upload waits at Confirm until the user commits it into the library; Done means the files were stored.",
+        "A raw file can skip extraction and move straight from Uploaded to validation."
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Branches and recovery",
+      "items": [
+        "Multi-volume uploads wait until the set is complete; extra parts merge into the first volume job.",
+        "Encrypted archives pause at Needs password and return to Extracting after a password is submitted.",
+        "Changing the console from Invalid reruns validation and can return the job to Confirm. A failed commit can also roll back to Confirm."
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Other outcomes",
+      "items": [
+        "An upload with no console goes to Unassigned instead of a console folder.",
+        "An Invalid upload can be set aside in Unassigned or sent to trash.",
+        "Failed marks a processing error and has no way out. Done and Unassigned are the other terminal outcomes."
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Not drawn",
+      "items": [
+        "Set aside also offers the trash, restorable into Unassigned.",
+        "Changing the console from Confirm can make the files invalid again.",
+        "A commit that fails is undone and returns to Confirm; any step can fail or be cancelled.",
+        "Storing (committing) moves every file in one journaled operation, undone if it fails."
+      ]
+    }
+  ]
+}
