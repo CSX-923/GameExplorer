@@ -12,7 +12,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/ingestion/domain"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/ingestion/domain"
 )
 
 // CommitFile is the user's data for one valid file (RF-08, RF-09).

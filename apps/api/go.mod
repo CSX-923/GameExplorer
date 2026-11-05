@@ -1,4 +1,4 @@
-module github.com/CarlosSV923/GameExplorer/apps/api
+module github.com/CSX-923/GameExplorer/apps/api
 
 go 1.27.0
 

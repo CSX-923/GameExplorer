@@ -14,7 +14,7 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/catalog/application"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/catalog/application"
 )
 
 // partialSuffix marks a cross-device copy in progress; the destination name

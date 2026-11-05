@@ -6,11 +6,11 @@ import (
 	"slices"
 	"testing"
 
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/catalog/application"
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/catalog/domain"
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/catalog/domain/consoles"
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/catalog/infrastructure/sqlite"
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/platform/database"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/catalog/application"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/catalog/domain"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/catalog/domain/consoles"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/catalog/infrastructure/sqlite"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/platform/database"
 )
 
 type fakeDirectory struct{ gotIDs []int64 }

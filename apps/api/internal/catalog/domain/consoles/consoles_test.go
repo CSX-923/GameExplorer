@@ -3,8 +3,8 @@ package consoles_test
 import (
 	"testing"
 
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/catalog/domain"
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/catalog/domain/consoles"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/catalog/domain"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/catalog/domain/consoles"
 )
 
 // TestRegistryIsConsistent guards every console definition, so adding one

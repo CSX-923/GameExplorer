@@ -18,7 +18,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/ingestion/application"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/ingestion/application"
 )
 
 // Binary is the 7-Zip executable (installed by scripts/install-7zip.sh).

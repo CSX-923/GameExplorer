@@ -1,6 +1,6 @@
 package consoles
 
-import "github.com/CarlosSV923/GameExplorer/apps/api/internal/catalog/domain"
+import "github.com/CSX-923/GameExplorer/apps/api/internal/catalog/domain"
 
 // PSP is the PlayStation Portable: one file per game, named after the game;
 // no updates or DLC for now.

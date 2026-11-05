@@ -9,6 +9,6 @@
    - `IGDB_CLIENT_ID` e `IGDB_CLIENT_SECRET` si quieres sugerencias y portadas (opcional).
 4. Abre `http://<ip-del-nas>:8080`. Si la app no puede escribir en la biblioteca, lo dice en un banner en vez de reiniciarse.
 
-**Actualizar:** la imagen `ghcr.io/carlossv923/gameexplorer:latest` se publica con cada tag `v*`; en TrueNAS, *Update* o *Pull image* sobre la app.
+**Actualizar:** la imagen `ghcr.io/csx-923/gameexplorer:latest` se publica con cada tag `v*`; en TrueNAS, *Update* o *Pull image* sobre la app.
 
 **SMB:** conviene ocultar `.gameexplorer` (staging y papelera) con `veto files = /.gameexplorer/` en las opciones auxiliares del share. `_unassigned/` sí debe verse: es la sección No asignados.

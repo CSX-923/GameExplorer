@@ -4,8 +4,8 @@ package broker
 import (
 	"sync"
 
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/ingestion/application"
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/ingestion/domain"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/ingestion/application"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/ingestion/domain"
 )
 
 // subscriberBuffer absorbs bursts (progress ticks of several uploads). A

@@ -8,7 +8,7 @@ import (
 	"testing"
 	"testing/fstest"
 
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/platform/web"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/platform/web"
 )
 
 func get(t *testing.T, h http.Handler, path string) *httptest.ResponseRecorder {

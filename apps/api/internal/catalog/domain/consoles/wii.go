@@ -1,6 +1,6 @@
 package consoles
 
-import "github.com/CarlosSV923/GameExplorer/apps/api/internal/catalog/domain"
+import "github.com/CSX-923/GameExplorer/apps/api/internal/catalog/domain"
 
 // Wii stores one file per game, named after the game ("Ōkami.nkit.iso");
 // no updates or DLC for now.

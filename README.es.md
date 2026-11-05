@@ -1,6 +1,6 @@
 # GameExplorer
 
-[English](README.md) · **[Demo en vivo](https://game-explorer-gold.vercel.app/)** · **[Arquitectura interactiva](https://carlossv923.github.io/GameExplorer/es/)**
+[English](README.md) · **[Demo en vivo](https://game-explorer-gold.vercel.app/)** · **[Arquitectura interactiva](https://csx-923.github.io/GameExplorer/es/)**
 
 App web autoalojada para un NAS doméstico (TrueNAS SCALE) que permite **subir, descomprimir, clasificar, renombrar, explorar y descargar juegos de emulación** desde cualquier navegador: escritorio, tablet, pantalla táctil o gamepad. La interfaz está inspirada en EmulationStation.
 
@@ -36,13 +36,13 @@ Las capturas y el GIF se generan desde la demo con `task screenshots`.
 
 ## Arquitectura
 
-**Diagramas interactivos:** [carlossv923.github.io/GameExplorer](https://carlossv923.github.io/GameExplorer/es/): versiones explorables de los dos diagramas de abajo (arquitectura del sistema y ciclo de vida de una subida), generadas con [Archify](https://github.com/tt-a1i/archify) desde [`docs/architecture/`](docs/architecture/).
+**Diagramas interactivos:** [csx-923.github.io/GameExplorer](https://csx-923.github.io/GameExplorer/es/): versiones explorables de los dos diagramas de abajo (arquitectura del sistema y ciclo de vida de una subida), generadas con [Archify](https://github.com/tt-a1i/archify) desde [`docs/architecture/`](docs/architecture/).
 
-<p align="center"><a href="https://carlossv923.github.io/GameExplorer/es/architecture.html"><img src="docs/architecture/images/es/architecture.svg" alt="Arquitectura de GameExplorer: en TrueNAS SCALE, el binario de Go con la app React incrustada usa SQLite y una caché de imágenes de IGDB en /data, organiza el dataset de la biblioteca (/library: carpetas de consola, _unassigned, .gameexplorer) y ejecuta 7-Zip como proceso hijo; el navegador usa HTTP, subidas tus y SSE; IGDB aporta nombres, portadas y logos; el escaneo periódico detecta lo copiado por SMB; la imagen se publica en GHCR; la demo de Vercel usa la misma app React con adaptadores en memoria" width="100%"></a></p>
+<p align="center"><a href="https://csx-923.github.io/GameExplorer/es/architecture.html"><img src="docs/architecture/images/es/architecture.svg" alt="Arquitectura de GameExplorer: en TrueNAS SCALE, el binario de Go con la app React incrustada usa SQLite y una caché de imágenes de IGDB en /data, organiza el dataset de la biblioteca (/library: carpetas de consola, _unassigned, .gameexplorer) y ejecuta 7-Zip como proceso hijo; el navegador usa HTTP, subidas tus y SSE; IGDB aporta nombres, portadas y logos; el escaneo periódico detecta lo copiado por SMB; la imagen se publica en GHCR; la demo de Vercel usa la misma app React con adaptadores en memoria" width="100%"></a></p>
 
 Una subida es un trabajo que sigue esta máquina de estados (spec RF-03 a RF-13):
 
-<p align="center"><a href="https://carlossv923.github.io/GameExplorer/es/upload-lifecycle.html"><img src="docs/architecture/images/es/upload-lifecycle.svg" alt="Ciclo de vida de una subida: subiendo, subida completa, esperando partes, descomprimiendo, necesita contraseña, confirmar, no válido, y los resultados listo, no asignados y fallido" width="100%"></a></p>
+<p align="center"><a href="https://csx-923.github.io/GameExplorer/es/upload-lifecycle.html"><img src="docs/architecture/images/es/upload-lifecycle.svg" alt="Ciclo de vida de una subida: subiendo, subida completa, esperando partes, descomprimiendo, necesita contraseña, confirmar, no válido, y los resultados listo, no asignados y fallido" width="100%"></a></p>
 
 | | |
 |---|---|
@@ -56,7 +56,7 @@ Los requisitos están en [`docs/spec.md`](docs/spec.md) y el registro de trabajo
 
 ## Instalar en TrueNAS SCALE
 
-La imagen se publica en GHCR con cada versión (`ghcr.io/carlossv923/gameexplorer`). Se instala como Custom App con [`deploy/truenas/compose.yaml`](deploy/truenas/compose.yaml); la [guía](deploy/truenas/README.md) explica los datasets, los permisos y la configuración de SMB.
+La imagen se publica en GHCR con cada versión (`ghcr.io/csx-923/gameexplorer`). Se instala como Custom App con [`deploy/truenas/compose.yaml`](deploy/truenas/compose.yaml); la [guía](deploy/truenas/README.md) explica los datasets, los permisos y la configuración de SMB.
 
 ## Desarrollo
 

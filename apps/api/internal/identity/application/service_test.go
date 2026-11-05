@@ -5,8 +5,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/identity/application"
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/identity/domain"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/identity/application"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/identity/domain"
 )
 
 type fakeVerifier string

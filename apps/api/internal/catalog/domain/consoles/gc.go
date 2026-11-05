@@ -1,6 +1,6 @@
 package consoles
 
-import "github.com/CarlosSV923/GameExplorer/apps/api/internal/catalog/domain"
+import "github.com/CSX-923/GameExplorer/apps/api/internal/catalog/domain"
 
 // GameCube stores a game as one file ("Metroid Prime.rvz") or, when it has
 // several discs, one file per disc ("Resident Evil 4 (Disc 2).iso").

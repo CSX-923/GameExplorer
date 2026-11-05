@@ -8,7 +8,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/platform/httpapi"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/platform/httpapi"
 )
 
 // Check is one named diagnostic.

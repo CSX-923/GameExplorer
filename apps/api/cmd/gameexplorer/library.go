@@ -5,12 +5,12 @@ import (
 	"errors"
 	"fmt"
 
-	catalogapp "github.com/CarlosSV923/GameExplorer/apps/api/internal/catalog/application"
-	catalogdomain "github.com/CarlosSV923/GameExplorer/apps/api/internal/catalog/domain"
-	ingestionapp "github.com/CarlosSV923/GameExplorer/apps/api/internal/ingestion/application"
-	ingestiondomain "github.com/CarlosSV923/GameExplorer/apps/api/internal/ingestion/domain"
-	metadataapp "github.com/CarlosSV923/GameExplorer/apps/api/internal/metadata/application"
-	metadatadomain "github.com/CarlosSV923/GameExplorer/apps/api/internal/metadata/domain"
+	catalogapp "github.com/CSX-923/GameExplorer/apps/api/internal/catalog/application"
+	catalogdomain "github.com/CSX-923/GameExplorer/apps/api/internal/catalog/domain"
+	ingestionapp "github.com/CSX-923/GameExplorer/apps/api/internal/ingestion/application"
+	ingestiondomain "github.com/CSX-923/GameExplorer/apps/api/internal/ingestion/domain"
+	metadataapp "github.com/CSX-923/GameExplorer/apps/api/internal/metadata/application"
+	metadatadomain "github.com/CSX-923/GameExplorer/apps/api/internal/metadata/domain"
 )
 
 // gameDirectory adapts the metadata context to the catalog's port.

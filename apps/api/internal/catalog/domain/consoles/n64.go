@@ -1,6 +1,6 @@
 package consoles
 
-import "github.com/CarlosSV923/GameExplorer/apps/api/internal/catalog/domain"
+import "github.com/CSX-923/GameExplorer/apps/api/internal/catalog/domain"
 
 // N64 stores one ROM per game, named after the game ("Super Mario 64.z64"),
 // in any of the three dump formats.

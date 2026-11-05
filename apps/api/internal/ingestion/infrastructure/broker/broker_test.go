@@ -3,8 +3,8 @@ package broker_test
 import (
 	"testing"
 
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/ingestion/domain"
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/ingestion/infrastructure/broker"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/ingestion/domain"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/ingestion/infrastructure/broker"
 )
 
 func TestBrokerFanOutAndUnsubscribe(t *testing.T) {

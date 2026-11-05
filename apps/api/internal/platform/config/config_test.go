@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/platform/config"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/platform/config"
 )
 
 func validEnv() map[string]string {

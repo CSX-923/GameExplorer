@@ -8,7 +8,7 @@ import (
 	"slices"
 	"testing"
 
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/catalog/infrastructure/libraryfs"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/catalog/infrastructure/libraryfs"
 )
 
 func TestMoveNeverOverwrites(t *testing.T) {

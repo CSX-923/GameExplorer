@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/identity/domain"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/identity/domain"
 )
 
 func TestSessionActiveAt(t *testing.T) {

@@ -1,6 +1,6 @@
 package consoles
 
-import "github.com/CarlosSV923/GameExplorer/apps/api/internal/catalog/domain"
+import "github.com/CSX-923/GameExplorer/apps/api/internal/catalog/domain"
 
 // Switch is the Nintendo Switch: a game is its base plus updates and DLC,
 // and one upload may bring several of them ("Limbo [BASE].xci",

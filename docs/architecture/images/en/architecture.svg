@@ -809,8 +809,8 @@ svg[data-node-ui][data-preset="editorial"] :is([data-graph-role="structural-fram
         <text x="1192.5" y="272" class="t-muted" font-size="9" text-anchor="middle">Copies files into the shared dataset</text>
         </g>
 
-        <g id="node-ghcr" data-node-id="ghcr" data-node-label="GHCR image" tabindex="0" role="button" aria-label="Focus GHCR image, ghcr.io/carlossv923/gameexplorer, Architecture component" aria-pressed="false" data-node-kind="external" data-node-sublabel="ghcr.io/carlossv923/gameexplorer" data-node-context="Architecture component">
-          <title>GHCR image · ghcr.io/carlossv923/gameexplorer · Architecture component</title>
+        <g id="node-ghcr" data-node-id="ghcr" data-node-label="GHCR image" tabindex="0" role="button" aria-label="Focus GHCR image, ghcr.io/csx-923/gameexplorer, Architecture component" aria-pressed="false" data-node-kind="external" data-node-sublabel="ghcr.io/csx-923/gameexplorer" data-node-context="Architecture component">
+          <title>GHCR image · ghcr.io/csx-923/gameexplorer · Architecture component</title>
           <rect x="700" y="420" width="255" height="76" rx="8" class="c-mask"/>
           <rect x="700" y="420" width="255" height="76" rx="8" class="c-external" data-animate="node" style="--step: 10; --flow-node-name: archify-relay-node-1;" stroke-width="1.5"/>
           <g aria-hidden="true" data-semantic-sigil="external" class="semantic-sigil s-external" transform="translate(706 426) scale(0.6875)">
@@ -818,7 +818,7 @@ svg[data-node-ui][data-preset="editorial"] :is([data-graph-role="structural-fram
             <path d="M8 2.5h5.5V8M13.5 2.5 7.5 8.5"/>
           </g>
           <text data-node-label="" x="827.5" y="456" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">GHCR image</text>
-        <text x="827.5" y="472" class="t-muted" font-size="9" text-anchor="middle">ghcr.io/carlossv923/gameexplorer</text>
+        <text x="827.5" y="472" class="t-muted" font-size="9" text-anchor="middle">ghcr.io/csx-923/gameexplorer</text>
         </g>
 
         <g id="node-demo" data-node-id="demo" data-node-label="Vercel demo" tabindex="0" role="button" aria-label="Focus Vercel demo, Same React app · in-memory demo adapters · no backend, Vercel" aria-pressed="false" data-node-kind="frontend" data-node-sublabel="Same React app · in-memory demo adapters · no backend" data-node-context="Vercel">

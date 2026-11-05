@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/catalog/domain"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/catalog/domain"
 )
 
 // TrashView is a trash entry with what the trash screen shows.

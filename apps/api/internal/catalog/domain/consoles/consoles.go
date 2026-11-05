@@ -3,7 +3,7 @@
 // file and a line in All. Step by step: docs/adding-a-console.md.
 package consoles
 
-import "github.com/CarlosSV923/GameExplorer/apps/api/internal/catalog/domain"
+import "github.com/CSX-923/GameExplorer/apps/api/internal/catalog/domain"
 
 // All returns every console in its default carousel order: by maker,
 // then by year (spec §6).

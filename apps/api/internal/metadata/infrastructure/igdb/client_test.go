@@ -10,8 +10,8 @@ import (
 	"sync/atomic"
 	"testing"
 
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/metadata/domain"
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/metadata/infrastructure/igdb"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/metadata/domain"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/metadata/infrastructure/igdb"
 )
 
 // fakeIGDB mimics the Twitch token endpoint and the IGDB API.

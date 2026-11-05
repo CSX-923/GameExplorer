@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/catalog/domain"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/catalog/domain"
 )
 
 // ScanReport summarizes a library scan (RF-26).

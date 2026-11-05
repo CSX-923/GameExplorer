@@ -5,7 +5,7 @@ import (
 	"slices"
 	"testing"
 
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/metadata/domain"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/metadata/domain"
 )
 
 func TestRankByNamePutsTheTypedGameFirst(t *testing.T) {

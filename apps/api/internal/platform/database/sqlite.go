@@ -12,7 +12,7 @@ import (
 	"github.com/pressly/goose/v3"
 	_ "modernc.org/sqlite" // pure-Go driver, registered as "sqlite"
 
-	"github.com/CarlosSV923/GameExplorer/apps/api/db"
+	"github.com/CSX-923/GameExplorer/apps/api/db"
 )
 
 // FileName is the database file inside DATA_PATH.

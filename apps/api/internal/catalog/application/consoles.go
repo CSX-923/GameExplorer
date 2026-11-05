@@ -9,7 +9,7 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/catalog/domain"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/catalog/domain"
 )
 
 // PlatformInfo is what the catalog needs to know about a console's platform.
