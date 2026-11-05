@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/platform/httpserver"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/platform/httpserver"
 )
 
 func TestNewKeepsTransferTimeoutsOpen(t *testing.T) {

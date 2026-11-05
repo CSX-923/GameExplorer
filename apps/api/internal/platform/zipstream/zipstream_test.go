@@ -9,7 +9,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/platform/zipstream"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/platform/zipstream"
 )
 
 func text(name, content string, mod time.Time) zipstream.Entry {

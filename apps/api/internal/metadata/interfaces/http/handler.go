@@ -7,9 +7,9 @@ import (
 	"log/slog"
 	"net/http"
 
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/metadata/application"
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/metadata/domain"
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/platform/httpapi"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/metadata/application"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/metadata/domain"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/platform/httpapi"
 )
 
 // imageCacheControl: an IGDB image id always points to the same picture.

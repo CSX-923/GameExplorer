@@ -5,7 +5,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/identity/domain"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/identity/domain"
 )
 
 // PasswordVerifier checks the shared password.

@@ -19,8 +19,8 @@ import (
 	tusd "github.com/tus/tusd/v2/pkg/handler"
 	expslog "golang.org/x/exp/slog"
 
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/ingestion/application"
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/ingestion/domain"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/ingestion/application"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/ingestion/domain"
 )
 
 // Metadata keys the browser sends with Upload-Metadata (RF-03).

@@ -5,8 +5,8 @@ import (
 	"database/sql"
 	"fmt"
 
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/ingestion/domain"
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/ingestion/infrastructure/sqlite/sqlcgen"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/ingestion/domain"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/ingestion/infrastructure/sqlite/sqlcgen"
 )
 
 // FileRepository implements domain.StagedFileRepository.

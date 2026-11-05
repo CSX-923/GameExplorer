@@ -27,4 +27,4 @@ El script abre cada HTML de `site/` y usa su **Export → SVG** en tema oscuro, 
 
 ## Publicación
 
-El workflow `.github/workflows/pages.yml` publica `site/` en GitHub Pages (https://carlossv923.github.io/GameExplorer/) con cada push a `main` que la cambie.
+El workflow `.github/workflows/pages.yml` publica `site/` en GitHub Pages (https://csx-923.github.io/GameExplorer/) con cada push a `main` que la cambie.

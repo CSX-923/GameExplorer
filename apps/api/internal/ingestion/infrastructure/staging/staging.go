@@ -14,9 +14,9 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/ingestion/application"
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/ingestion/domain"
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/platform/diskspace"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/ingestion/application"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/ingestion/domain"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/platform/diskspace"
 )
 
 // Area implements application.Staging.

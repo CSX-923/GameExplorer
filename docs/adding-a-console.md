@@ -24,7 +24,7 @@ Todo está en un solo valor, `domain.ConsoleDefinition` ([`apps/api/internal/cat
    ```go
    package consoles
 
-   import "github.com/CarlosSV923/GameExplorer/apps/api/internal/catalog/domain"
+   import "github.com/CSX-923/GameExplorer/apps/api/internal/catalog/domain"
 
    // Dreamcast stores one file per game, named after the game.
    func Dreamcast() domain.ConsoleDefinition {

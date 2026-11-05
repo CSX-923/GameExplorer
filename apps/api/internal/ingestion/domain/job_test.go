@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/ingestion/domain"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/ingestion/domain"
 )
 
 var t0 = time.Date(2026, 10, 7, 12, 0, 0, 0, time.UTC)

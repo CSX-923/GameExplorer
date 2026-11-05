@@ -13,8 +13,8 @@ import (
 	"testing"
 	"time"
 
-	identityinfra "github.com/CarlosSV923/GameExplorer/apps/api/internal/identity/infrastructure"
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/platform/config"
+	identityinfra "github.com/CSX-923/GameExplorer/apps/api/internal/identity/infrastructure"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/platform/config"
 )
 
 const testPassword = "correct horse battery staple"

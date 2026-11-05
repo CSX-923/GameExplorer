@@ -10,9 +10,9 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/ingestion/application"
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/ingestion/domain"
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/ingestion/infrastructure/tus"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/ingestion/application"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/ingestion/domain"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/ingestion/infrastructure/tus"
 )
 
 func newServer(t *testing.T, free uint64) *httptest.Server {

@@ -1,6 +1,6 @@
 package consoles
 
-import "github.com/CarlosSV923/GameExplorer/apps/api/internal/catalog/domain"
+import "github.com/CSX-923/GameExplorer/apps/api/internal/catalog/domain"
 
 // PS2 stores a game as one file ("Okami.iso") or, when it has several
 // discs, one file per disc ("Xenosaga Episode III (Disc 1).iso").

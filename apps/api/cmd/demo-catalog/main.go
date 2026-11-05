@@ -19,10 +19,10 @@ import (
 
 	"github.com/caarlos0/env/v11"
 
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/catalog/domain/consoles"
-	metadataapp "github.com/CarlosSV923/GameExplorer/apps/api/internal/metadata/application"
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/metadata/domain"
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/metadata/infrastructure/igdb"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/catalog/domain/consoles"
+	metadataapp "github.com/CSX-923/GameExplorer/apps/api/internal/metadata/application"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/metadata/domain"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/metadata/infrastructure/igdb"
 )
 
 // required titles must exist in the catalog because the demo's sample files

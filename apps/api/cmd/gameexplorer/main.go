@@ -25,9 +25,9 @@ import (
 	"syscall"
 	"time"
 
-	identityinfra "github.com/CarlosSV923/GameExplorer/apps/api/internal/identity/infrastructure"
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/platform/config"
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/platform/httpserver"
+	identityinfra "github.com/CSX-923/GameExplorer/apps/api/internal/identity/infrastructure"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/platform/config"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/platform/httpserver"
 )
 
 const shutdownTimeout = 30 * time.Second

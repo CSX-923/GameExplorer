@@ -6,7 +6,7 @@ import (
 	"path"
 	"slices"
 
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/catalog/domain"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/catalog/domain"
 )
 
 // NewFile is a file to add to the library.

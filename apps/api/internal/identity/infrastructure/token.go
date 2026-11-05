@@ -9,7 +9,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/identity/domain"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/identity/domain"
 )
 
 // HMACTokenCodec encodes sessions as "<payload>.<signature>", both base64url,

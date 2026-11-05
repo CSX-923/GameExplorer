@@ -8,8 +8,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/catalog/application"
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/catalog/domain"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/catalog/application"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/catalog/domain"
 )
 
 func TestPurgeExpiredKeepsRecentEntriesAndPendingUndos(t *testing.T) {

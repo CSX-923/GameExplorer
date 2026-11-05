@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/ingestion/domain"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/ingestion/domain"
 )
 
 func TestParseVolume(t *testing.T) {

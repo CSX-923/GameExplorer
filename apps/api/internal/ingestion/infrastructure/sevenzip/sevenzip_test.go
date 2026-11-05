@@ -7,8 +7,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/ingestion/application"
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/ingestion/infrastructure/sevenzip"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/ingestion/application"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/ingestion/infrastructure/sevenzip"
 )
 
 // require7zz skips without 7-Zip, except where REQUIRE_7ZZ is set (the dev

@@ -1,6 +1,6 @@
 # Fase 0.5 — Resultados del spike de archivos grandes
 
-Fecha: 2026-10-06/07 · Código: [`spikes/large-files` @ 8479d64](https://github.com/CarlosSV923/GameExplorer/tree/8479d64/spikes/large-files) (eliminado del árbol al cerrar la fase) · Imagen: `ghcr.io/carlossv923/gameexplorer-spike`
+Fecha: 2026-10-06/07 · Código: [`spikes/large-files` @ 8479d64](https://github.com/CSX-923/GameExplorer/tree/8479d64/spikes/large-files) (eliminado del árbol al cerrar la fase) · Imagen: `ghcr.io/csx-923/gameexplorer-spike`
 
 ## Entorno
 - **NAS**: TrueNAS SCALE, Custom App (Docker), dataset de prueba con ACL SMB y app corriendo como `3000:3000`.

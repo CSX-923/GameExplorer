@@ -6,9 +6,9 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/catalog/application"
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/catalog/domain"
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/platform/httpapi"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/catalog/application"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/catalog/domain"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/platform/httpapi"
 )
 
 // WithManagement sets the use cases that change the library.

@@ -2,7 +2,7 @@
 # Custom App › Install via YAML). Replace the values marked CHANGE.
 services:
   gameexplorer:
-    image: ghcr.io/carlossv923/gameexplorer:latest
+    image: ghcr.io/csx-923/gameexplorer:latest
     restart: unless-stopped
     # The user that owns what the app writes. Give it a Modify ACL entry on
     # the library dataset (a container does not inherit supplementary groups).

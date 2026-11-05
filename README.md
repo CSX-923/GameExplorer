@@ -1,6 +1,6 @@
 # GameExplorer
 
-[Español](README.es.md) · **[Live demo](https://game-explorer-gold.vercel.app/)** · **[Interactive architecture](https://carlossv923.github.io/GameExplorer/)**
+[Español](README.es.md) · **[Live demo](https://game-explorer-gold.vercel.app/)** · **[Interactive architecture](https://csx-923.github.io/GameExplorer/)**
 
 Self-hosted web app for a home NAS (TrueNAS SCALE) to **upload, extract, classify, rename, browse and download emulation game files** from any browser: desktop, tablet, touch screen or gamepad. The UI is inspired by EmulationStation.
 
@@ -36,13 +36,13 @@ Screenshots and GIF are generated from the demo with `task screenshots`.
 
 ## Architecture
 
-**Interactive diagrams:** [carlossv923.github.io/GameExplorer](https://carlossv923.github.io/GameExplorer/): explorable versions of the two diagrams below (system architecture and upload job lifecycle), generated with [Archify](https://github.com/tt-a1i/archify) from [`docs/architecture/`](docs/architecture/).
+**Interactive diagrams:** [csx-923.github.io/GameExplorer](https://csx-923.github.io/GameExplorer/): explorable versions of the two diagrams below (system architecture and upload job lifecycle), generated with [Archify](https://github.com/tt-a1i/archify) from [`docs/architecture/`](docs/architecture/).
 
-<p align="center"><a href="https://carlossv923.github.io/GameExplorer/architecture.html"><img src="docs/architecture/images/en/architecture.svg" alt="GameExplorer architecture: on TrueNAS SCALE, the Go binary with the embedded React app uses SQLite and an IGDB image cache in /data, organizes the game library dataset (/library: console folders, _unassigned, .gameexplorer) and runs 7-Zip as a child process; the browser talks HTTP, tus uploads and SSE; IGDB provides names, covers and logos; SMB copies are picked up by the periodic scan; the image is published to GHCR; the Vercel demo runs the same React app with in-memory adapters" width="100%"></a></p>
+<p align="center"><a href="https://csx-923.github.io/GameExplorer/architecture.html"><img src="docs/architecture/images/en/architecture.svg" alt="GameExplorer architecture: on TrueNAS SCALE, the Go binary with the embedded React app uses SQLite and an IGDB image cache in /data, organizes the game library dataset (/library: console folders, _unassigned, .gameexplorer) and runs 7-Zip as a child process; the browser talks HTTP, tus uploads and SSE; IGDB provides names, covers and logos; SMB copies are picked up by the periodic scan; the image is published to GHCR; the Vercel demo runs the same React app with in-memory adapters" width="100%"></a></p>
 
 An upload is a job that follows this state machine (spec RF-03 to RF-13):
 
-<p align="center"><a href="https://carlossv923.github.io/GameExplorer/upload-lifecycle.html"><img src="docs/architecture/images/en/upload-lifecycle.svg" alt="Upload job lifecycle: uploading, uploaded, waiting for parts, extracting, needs password, confirm, invalid, and the outcomes done, unassigned and failed" width="100%"></a></p>
+<p align="center"><a href="https://csx-923.github.io/GameExplorer/upload-lifecycle.html"><img src="docs/architecture/images/en/upload-lifecycle.svg" alt="Upload job lifecycle: uploading, uploaded, waiting for parts, extracting, needs password, confirm, invalid, and the outcomes done, unassigned and failed" width="100%"></a></p>
 
 | | |
 |---|---|
@@ -56,7 +56,7 @@ The requirements are in [`docs/spec.md`](docs/spec.md) and the work log in [`doc
 
 ## Install on TrueNAS SCALE
 
-The image is published to GHCR with every release (`ghcr.io/carlossv923/gameexplorer`). Install it as a custom app with [`deploy/truenas/compose.yaml`](deploy/truenas/compose.yaml); the [guide](deploy/truenas/README.md) covers the datasets, permissions and SMB settings.
+The image is published to GHCR with every release (`ghcr.io/csx-923/gameexplorer`). Install it as a custom app with [`deploy/truenas/compose.yaml`](deploy/truenas/compose.yaml); the [guide](deploy/truenas/README.md) covers the datasets, permissions and SMB settings.
 
 ## Development
 

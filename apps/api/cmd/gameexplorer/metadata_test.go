@@ -8,7 +8,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/platform/config"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/platform/config"
 )
 
 // fakeGames are the games the fake IGDB returns by id.

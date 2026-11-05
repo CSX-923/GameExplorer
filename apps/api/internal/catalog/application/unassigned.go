@@ -9,7 +9,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/catalog/domain"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/catalog/domain"
 )
 
 // unassignedDir is the unassigned folder's name in the library root (RF-27).

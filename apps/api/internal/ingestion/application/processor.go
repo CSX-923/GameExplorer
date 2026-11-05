@@ -13,7 +13,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/ingestion/domain"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/ingestion/domain"
 )
 
 // ExtractionMargin is kept free on top of an archive's uncompressed size.

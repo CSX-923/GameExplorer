@@ -12,8 +12,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/metadata/domain"
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/metadata/infrastructure/imagecache"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/metadata/domain"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/metadata/infrastructure/imagecache"
 )
 
 func TestCacheDownloadsOnceAndServesFromDisk(t *testing.T) {

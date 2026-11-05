@@ -7,7 +7,7 @@
     "output": "docs/architecture/site/es/upload-lifecycle.html",
     "quality_profile": "showcase",
     "repository": {
-      "url": "https://github.com/CarlosSV923/GameExplorer.git",
+      "url": "https://github.com/CSX-923/GameExplorer.git",
       "provider": "github",
       "link_mode": "web",
       "revision": "5a1b0af0a88e6ffd33c6fc43b86646ddb47a555d"

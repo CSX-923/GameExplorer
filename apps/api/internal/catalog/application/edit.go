@@ -4,7 +4,7 @@ import (
 	"context"
 	"errors"
 
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/catalog/domain"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/catalog/domain"
 )
 
 // EditRequest renames a game and/or moves it to another console (RF-24).

@@ -12,7 +12,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/catalog/domain"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/catalog/domain"
 )
 
 // GameInfo is what the catalog needs to know about an IGDB game.

@@ -8,8 +8,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/catalog/domain"
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/catalog/infrastructure/sqlite/sqlcgen"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/catalog/domain"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/catalog/infrastructure/sqlite/sqlcgen"
 )
 
 // timeLayout is fixed-width UTC so that SQL string comparison equals time order.

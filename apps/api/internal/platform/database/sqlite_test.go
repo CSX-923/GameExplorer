@@ -3,7 +3,7 @@ package database_test
 import (
 	"testing"
 
-	"github.com/CarlosSV923/GameExplorer/apps/api/internal/platform/database"
+	"github.com/CSX-923/GameExplorer/apps/api/internal/platform/database"
 )
 
 func TestOpenMigrates(t *testing.T) {
